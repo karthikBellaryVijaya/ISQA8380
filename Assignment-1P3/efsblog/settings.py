@@ -123,9 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'hrossertest@gmail.com'
-EMAIL_HOST_PASSWORD = 'Fr33dom28!'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'f0f84b6170434b'
+EMAIL_HOST_PASSWORD = '7b63cdc2691d30'
+EMAIL_PORT = '2525'
