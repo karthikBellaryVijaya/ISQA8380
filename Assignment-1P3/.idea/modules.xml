@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/efs_rosser.iml" filepath="$PROJECT_DIR$/.idea/efs_rosser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../EFS1/.idea/My-EFS-App-master.iml" filepath="$PROJECT_DIR$/../EFS1/.idea/My-EFS-App-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../My-EFS-App-master/.idea/My-EFS-App-master.iml" filepath="$PROJECT_DIR$/../My-EFS-App-master/.idea/My-EFS-App-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/efs.iml" filepath="$PROJECT_DIR$/.idea/efs.iml" />
     </modules>
   </component>
 </project>

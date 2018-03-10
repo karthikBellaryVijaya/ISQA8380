@@ -109,6 +109,56 @@ def stock_delete(request, pk):
     return render(request, 'portfolio/stock_list.html', {'stocks': stocks})
 
 
+
+@login_required
+def funds_list(request):
+    funds = Stock.objects.filter(purchase_date__lte=timezone.now())
+    return render(request, 'portfolio/fund_list.html', {'funds': funds})
+
+
+@login_required
+def funds_new(request):
+    if request.method == "POST":
+        form = StockForm(request.POST)
+        if form.is_valid():
+            fund = form.save(commit=False)
+            fund.created_date = timezone.now()
+            fund.save()
+            funds = Stock.objects.filter(purchase_date__lte=timezone.now())
+            return render(request, 'portfolio/fund_list.html',
+                          {'funds': funds})
+    else:
+        form = fundForm()
+        # print("Else")
+    return render(request, 'portfolio/fund_new.html', {'form': form})
+
+
+@login_required
+def funds_edit(request, pk):
+    fund = get_object_or_404(Stock, pk=pk)
+    if request.method == "POST":
+        form = fundForm(request.POST, instance=fund)
+        if form.is_valid():
+            fund = form.save()
+            # stock.customer = stock.id
+            fund.updated_date = timezone.now()
+            fund.save()
+            funds = Stock.objects.filter(purchase_date__lte=timezone.now())
+            return render(request, 'portfolio/fund_list.html', {'funds': funds})
+    else:
+        # print("else")
+        form = StockForm(instance=fund)
+    return render(request, 'portfolio/fund_edit.html', {'form': form})
+
+
+@login_required
+def funds_delete(request, pk):
+    fund = get_object_or_404(Stock, pk=pk)
+    fund.delete()
+    funds = Stock.objects.filter(purchase_date__lte=timezone.now())
+    return render(request, 'portfolio/fund_list.html', {'funds': funds})
+
+
 @login_required
 def investment_list(request):
     investments = Investment.objects.filter(acquired_date__lte=timezone.now())
