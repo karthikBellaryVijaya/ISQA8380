@@ -1,0 +1,31 @@
+body {
+    margin: 0 auto;
+    width: 68%;
+}
+h1{
+    margin: 5px 5px 0;
+    padding: 15px 20px .25em;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font: normal normal 200% Georgia, Serif;
+    text-align:center;
+    }
+h2 a{
+    display: block;
+    text-decoration: none;
+    color: #cc6600;
+    font-weight: normal;
+}
+a:link {
+color:#5588aa;
+text-decoration:none;
+}
+a:visited {
+color:#999999;
+text-decoration:none;
+}
+a:hover {
+color:#cc6600;
+text-decoration:underline;
+}
